@@ -10,7 +10,7 @@ audio.volume = 0.15;
 
 let bg = new Audio();
 bg.src = '../sound/bg.wav';
-bg.volume = 0.3;
+bg.volume = 0.1;
 bg.autoplay = true;
 
 function foo(button, block) {
