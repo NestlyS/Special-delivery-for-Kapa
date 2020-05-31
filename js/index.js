@@ -6,11 +6,12 @@ let blocks = document.querySelectorAll('.block');
 
 let audio = new Audio();
 audio.src = '../sound/click.ogg';
+audio.src = 'https://raw.githubusercontent.com/NestlyS/forKapa/master/sound/click.ogg';
 audio.volume = 0.15;
 
 let bg = new Audio();
 bg.src = '../sound/bg.wav';
-bg.volume = 0.1;
+bg.volume = 0.05;
 bg.autoplay = true;
 
 function foo(button, block) {
