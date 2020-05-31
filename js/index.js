@@ -8,6 +8,11 @@ let audio = new Audio();
 audio.src = '../sound/click.ogg';
 audio.volume = 0.15;
 
+let bg = new Audio();
+bg.src = '../sound/bg.wav';
+bg.volume = 0.3;
+bg.autoplay = true;
+
 function foo(button, block) {
     button.addEventListener('click', () => {
         buttons.forEach((item) => {
