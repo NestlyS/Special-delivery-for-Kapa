@@ -16,8 +16,14 @@ let bg = new Audio();
 bg.src = 'https://raw.githubusercontent.com/NestlyS/forKapa/master/sound/try1.mp3';
 bg.volume = 0.7;
 
-ring.play();
-setTimeout(() => bg.play(), 0.3);
+window.onload = () => {
+    ring.play();
+    setTimeout(() => bg.play(), 0.3);
+}
+
+window.onmousemove = (ev) => {
+    document.querySelector('.container').style.transform = 'translate(' + ev.clientX / 100 + 'px, ' + ev.clientY / 100 + 'px)';
+};
 
 
 function foo(button, block) {
