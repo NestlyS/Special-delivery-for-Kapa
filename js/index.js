@@ -5,14 +5,20 @@ let blocks = document.querySelectorAll('.block');
 
 
 let audio = new Audio();
-audio.src = '../sound/click.ogg';
 audio.src = 'https://raw.githubusercontent.com/NestlyS/forKapa/master/sound/click.ogg';
 audio.volume = 0.15;
 
+let ring = new Audio();
+ring.src = 'https://raw.githubusercontent.com/NestlyS/forKapa/master/sound/ring.mp3';
+ring.volume = 0.7;
+
 let bg = new Audio();
-bg.src = '../sound/bg.wav';
-bg.volume = 0.05;
-bg.autoplay = true;
+bg.src = 'https://raw.githubusercontent.com/NestlyS/forKapa/master/sound/try1.mp3';
+bg.volume = 0.7;
+
+ring.play();
+setTimeout(() => bg.play(), 0.3);
+
 
 function foo(button, block) {
     button.addEventListener('click', () => {
