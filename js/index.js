@@ -1,5 +1,5 @@
 let url = 'https://raw.githubusercontent.com/NestlyS/forKapa/master/sound/';
-url = '../sound/';
+//url = '../sound/';
 
 document.body.style.height = screen.height + 'px';
 
