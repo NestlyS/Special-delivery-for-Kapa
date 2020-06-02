@@ -1,29 +1,71 @@
+let url = 'https://raw.githubusercontent.com/NestlyS/forKapa/master/sound/';
+url = '../sound/';
+
 document.body.style.height = screen.height + 'px';
 
 let buttons = document.querySelectorAll('[data-button="select"]');
 let blocks = document.querySelectorAll('.block');
+let container = document.querySelector('.container');
+let waitBlock = document.querySelector('.wait');
 
 
 let audio = new Audio();
-audio.src = 'https://raw.githubusercontent.com/NestlyS/forKapa/master/sound/click.ogg';
+audio.src = url + 'click.ogg';
 audio.volume = 0.15;
 
 let ring = new Audio();
-ring.src = 'https://raw.githubusercontent.com/NestlyS/forKapa/master/sound/ring.mp3';
+ring.src = url + 'ring.mp3';
 ring.volume = 0.7;
 
-let bg = new Audio();
-bg.src = 'https://raw.githubusercontent.com/NestlyS/forKapa/master/sound/try1.mp3';
-bg.volume = 0.7;
+let kate = new Audio();
+kate.src = url + 'kate.mp3';
+kate.volume = 0.7;
 
-window.onload = () => {
-    ring.play();
-    setTimeout(() => bg.play(), 0.3);
+let andrey = new Audio();
+andrey.src = url + 'andrey.3gpp';
+andrey.volume = 0.7;
+
+let playingNow;
+
+buttons.forEach((item) => {
+    if (item.dataset.type === 'kate') {
+        item.addEventListener('click', playSpeechOnce(kate));
+    }
+    if (item.dataset.type === 'andrey') {
+        item.addEventListener('click', playSpeechOnce(andrey));
+    }
+});
+
+
+function playSpeechOnce(speech) {
+    let once = true;
+    return function() {
+        if (playingNow !== undefined) {
+            playingNow.addEventListener('ended', () => {
+                setTimeout(() => {
+                    playSpeechOnce(speech);
+                }, 1000);
+            });
+            return 0;
+        }
+        if (once) {
+            playingNow = speech;
+            waitBlock.classList.add('wait--showed');
+            ring.play();
+            setTimeout(() => {
+                speech.play();
+                speech.addEventListener('ended', () => {
+                    waitBlock.classList.remove('wait--showed');
+                    playingNow = undefined;
+                });
+            }, 400);
+            once = false;
+        }
+    }
 }
 
-window.onmousemove = (ev) => {
-    document.querySelector('.container').style.transform = 'translate(' + ev.clientX / 100 + 'px, ' + ev.clientY / 100 + 'px)';
-};
+
+
 
 
 function foo(button, block) {

@@ -20,10 +20,10 @@
                     ДАЙХАРДМЭН
                 </div>
                 <ul class="sub-list container__sub-list list">
-                    <li class="sub-list__element"><button class="element element--selected" data-button="select" data-block="article-1">Главная проблема человечества? Логистика.</button></li>
-                    <li class="sub-list__element"><button class="element" data-button="select" data-block="article-2">МУЛы и местные курьеры</button></li>
-                    <li class="sub-list__element"><button class="element" data-button="select" data-block="article-3">Лайки и окситоцин</button></li>
-                    <li class="sub-list__element"><button class="element" data-button="select" data-block="article-4">Ожерелье Бриджет</button></li>
+                    <li class="sub-list__element"><button class="element element--selected" data-button="select" data-block="article-1" data-type="andrey">Главная проблема человечества? Логистика.</button></li>
+                    <li class="sub-list__element"><button class="element" data-button="select" data-block="article-2" data-type="andrey">МУЛы и местные курьеры</button></li>
+                    <li class="sub-list__element"><button class="element" data-button="select" data-block="article-3" data-type="andrey">Лайки и окситоцин</button></li>
+                    <li class="sub-list__element"><button class="element" data-button="select" data-block="article-4" data-type="andrey">Ожерелье Бриджет</button></li>
                 </ul>
             </li>
             <li class="list__elemenent">
@@ -42,11 +42,11 @@
                     ДОПОЛНИТЕЛЬНЫЕ МАТЕРИАЛЫ
                 </div>
                 <ul class="sub-list container__sub-list list">
-                    <li class="sub-list__element"><button class="element" data-button="select" data-block="block2">Хартманн</button></li>
-                    <li class="sub-list__element"><button class="element" data-button="select" data-block="block3">Сэм Портер Бриджес</button></li>
-                    <li class="sub-list__element"><button class="element" data-button="select" data-block="block4">Дедмен</button></li>
-                    <li class="sub-list__element"><button class="element" data-button="select" data-block="block5">Дайхардмэн</button></li>
-                    <li class="sub-list__element"><button class="element" data-button="select" data-block="block6">Фрэджайл</button></li>
+                    <li class="sub-list__element"><button class="element" data-button="select" data-block="block3" data-type="kate">Сэм Портер Бриджес</button></li>
+                    <li class="sub-list__element"><button class="element" data-button="select" data-block="block2" data-type="kate">Хартмэн</button></li>
+                    <li class="sub-list__element"><button class="element" data-button="select" data-block="block4" data-type="kate">Дедмэн</button></li>
+                    <li class="sub-list__element"><button class="element" data-button="select" data-block="block5" data-type="andrey">Дайхардмэн</button></li>
+                    <li class="sub-list__element"><button class="element" data-button="select" data-block="block6" data-type="kate">Фрэджайл</button></li>
                     <li class="sub-list__element"><button class="element" data-button="select" data-block="block7">???</button></li>
                 </ul>
             </li>
@@ -515,22 +515,20 @@
                 </div>
             </div>
         </div>
-        <div class="block block5 ">
-            <div class="block block4 ">
-                <div class="block__pic pic "><img class="block__img " src="img/pic/deadman.png " alt="Sam Porter Briges "></div>
-                <div class="info ">
-                    <div class="info__block">
-                        <h2 class="info__header ">Имя:</h2>
-                        <p class="info__description info__description--top ">Дайхардмэн</p>
-                    </div>
-                    <div class="info__block">
-                        <h2 class="info__header ">Автор:</h2>
-                        <p class="info__description "> Екатерина Филиппова</p>
-                    </div>
-                    <div class="info__block">
-                        <h2 class="info__header ">Получатель:</h2>
-                        <p class="info__description ">Капитолина Гуляева</p>
-                    </div>
+        <div class="block block5">
+            <div class="block__pic pic "><img class="block__img " src="img/pic/diehardman.png " alt="DieHardMan"></div>
+            <div class="info ">
+                <div class="info__block">
+                    <h2 class="info__header ">Имя:</h2>
+                    <p class="info__description info__description--top ">Дайхардмэн</p>
+                </div>
+                <div class="info__block">
+                    <h2 class="info__header ">Автор:</h2>
+                    <p class="info__description "> Екатерина Филиппова</p>
+                </div>
+                <div class="info__block">
+                    <h2 class="info__header ">Получатель:</h2>
+                    <p class="info__description ">Капитолина Гуляева</p>
                 </div>
             </div>
         </div>
@@ -558,14 +556,40 @@
         <div class="corner corner2 "></div>
         <div class="corner corner3 "></div>
         <div class="corner corner4 "></div>
+        <table class="container__stats">
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="stat-bar stat-bar--health"></div>
+                    </td>
+                    <td>
+                        <div class="stat-bar stat-bar--bb-yellow"></div>
+                    </td>
+                    <td>
+                        <div class="stat-counter stat-counter--weigth" rowspan="2"></div>
+                    </td>
+                    <td>
+                        <div class="stat-counter stat-counter--like"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="stat-bar stat-bar--bb-blue"></div>
+                    </td>
+                    <td>
+                        <div class="stat-bar stat-bar--stamina"></div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
         <div class="wait">
-            <div class="wait1"></div>
-            <div class="wait2"></div>
-            <div class="wait3"></div>
-            <div class="wait4"></div>
+            <div class="wait_item wait1"></div>
+            <div class="wait_item  wait2"></div>
+            <div class="wait_item  wait3"></div>
+            <div class="wait_item  wait4"></div>
+            </>
         </div>
-    </div>
-    <script src="js/index.js "></script>
+        <script src="js/index.js "></script>
 </body>
 
 </html>
