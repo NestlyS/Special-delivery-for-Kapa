@@ -67,7 +67,7 @@ body {
     padding: 100px 50px;
     background-size: 150%;
     background-repeat: no-repeat;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 *::-webkit-scrollbar {
@@ -122,7 +122,7 @@ button.element {
     animation: enable 0.6s linear;
     display: flex;
     position: relative;
-    height: 600px;
+    height: 100%;
     margin: 150px 50px 100px;
     margin: 0 auto;
     padding: 25px 25px 25px 0px;
