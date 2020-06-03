@@ -26,13 +26,15 @@ andrey.src = url + 'andrey.3gpp';
 andrey.volume = 0.7;
 
 let playingNow;
+let andreySpeech = playSpeechOnce(andrey);
+let kateSpeech = playSpeechOnce(kate);
 
 buttons.forEach((item) => {
     if (item.dataset.type === 'kate') {
-        item.addEventListener('click', playSpeechOnce(kate));
+        item.addEventListener('click', kateSpeech);
     }
     if (item.dataset.type === 'andrey') {
-        item.addEventListener('click', playSpeechOnce(andrey));
+        item.addEventListener('click', andreySpeech);
     }
 });
 
@@ -43,7 +45,7 @@ function playSpeechOnce(speech) {
         if (playingNow !== undefined) {
             playingNow.addEventListener('ended', () => {
                 setTimeout(() => {
-                    playSpeechOnce(speech);
+                    playingNow === kate ? andreySpeech() : kateSpeech();
                 }, 1000);
             });
             return 0;
